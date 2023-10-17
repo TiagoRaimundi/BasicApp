@@ -1,29 +1,18 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   SafeAreaView,
-  View,
+  View, Text
 } from 'react-native';
 
-import {Chair as BlackChair } from './Chair'
-import * as greetings from './helpers'
-import Table from './Table';
+import Splash from './src/screens/auth/Splash';
 
 const App = () => {
-  console.log('greetings hello', greetings.hello);
-  console.log('greetings hola', greetings.hola);
 
-
-  return ( 
+  return (
     <SafeAreaView>
-      <View>
-        <BlackChair />
-        <Table/>
-
-      </View>
-
-
+      <Splash />
     </SafeAreaView>
 
   );
