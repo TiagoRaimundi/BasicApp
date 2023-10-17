@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Image, Text } from "react-native";
 import {styles} from './styles'
+import Button from "../../../components/Button/Index";
 
 const Splash = () => {
     return(
@@ -9,6 +10,8 @@ const Splash = () => {
             <Text style={styles.title}>You'll Find </Text>
             <Text style={[styles.title, styles.innerTitle]}>All you need</Text> 
             <Text style={styles.title}>Here! </Text>
+
+            <Button title="Sign Up"/>
         </View>
     );
 }
