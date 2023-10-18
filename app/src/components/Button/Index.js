@@ -1,5 +1,5 @@
 import React from "react"
-import { Pressable, TouchableOpacity, Text } from "react-native"
+import {TouchableOpacity, Text } from "react-native"
 import { styles } from "./styles"
 
 const Button = ({title, onPress}) => {
