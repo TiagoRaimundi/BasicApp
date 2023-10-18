@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text} from "react-native";
+import { View, Text, Button} from "react-native";
 import { styles } from './styles'
 import AuthHeader from "../../../components/AuthHeader";
 import Input from "../../../components/input";
@@ -20,6 +20,8 @@ const Signup = () => {
                 <Checkbox checked={checked} onCheck={setChecked}/>
                 <Text style={styles.agreeText}>I agree with<Text style={styles.agreeTextBold}> Terms</Text> & <Text style={styles.agreeTextBold}>Privacy</Text></Text>
             </View>
+
+            <Button style={styles.button} title="Sign Up"/>
        
         </View>
     );
