@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { View, Text, Button} from "react-native";
+import { View, Text} from "react-native";
 import { styles } from './styles'
 import AuthHeader from "../../../components/AuthHeader";
 import Input from "../../../components/input";
 import Checkbox from "../../../components/Checkbox/Index";
+import Button from "../../../components/Button/Index";
+import Seperator from "../../../components/Seperator/Index";
 
 
 const Signup = () => {
@@ -22,6 +24,8 @@ const Signup = () => {
             </View>
 
             <Button style={styles.button} title="Sign Up"/>
+
+            <Seperator text="Or sign up with"/>
        
         </View>
     );
