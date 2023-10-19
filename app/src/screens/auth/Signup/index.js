@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text} from "react-native";
+import { View, Text, ScrollView} from "react-native";
 import { styles } from './styles'
 import AuthHeader from "../../../components/AuthHeader";
 import Input from "../../../components/input";
@@ -11,8 +11,13 @@ import GoogleLogin from "../../../components/GoogleLogin";
 
 const Signup = () => {
     const [checked, setChecked] = useState(false)
+
+    const onSignIn = () => {
+        console.log('HELLO')
+    }
+
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <AuthHeader title="Sign Up"/>
 
             <Input label="name" placeholder="Jon Doe"/>
@@ -29,8 +34,13 @@ const Signup = () => {
             <Seperator text="Or sign up with"/>
 
             <GoogleLogin/>
-       
-        </View>
+            
+            <Text onPress={onSignIn} style={styles.footerText}>
+                Already have an account? 
+                <Text onPress={onSignIn} style={styles.footerLink}> Sign In</Text>
+            </Text>
+            
+        </ScrollView>
     );
 }
 export default Signup;

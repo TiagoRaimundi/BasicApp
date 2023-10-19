@@ -1,20 +1,27 @@
-import React, { useEffect } from 'react'
-import {SafeAreaView} from 'react-native'
-import Splash from './src/screens/auth/Splash'
-import Signup from './src/screens/auth/Signup'
+import React, { useEffect } from 'react';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
+import { View, Button } from 'react-native';
 
-///////////////////////////////
 const App = () => {
+  
   useEffect(() => {
     GoogleSignin.configure({
-      scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
-      webClientId: WEB_CLIENT_ID, // client ID of type WEB for your server (needed to verify user ID and offline access)
-      offlineAccess: true,  // if you want to access Google API on behalf of the user FROM YOUR SERVER
+      webClientId: '1016492994757-n1v181m736ail8469ohi2aujgcdnsimv.apps.googleusercontent.com',
     });
-    
+  }, []);
 
-  }, [])
+  const sigInWithGoogleAsync = async () => {
+    try {
+      const { idToken } = await GoogleSignin.signIn();
+      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+      const user = await auth().signInWithCredential(googleCredential);
+      console.log(user);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <SafeAreaView>
       <Signup/>
